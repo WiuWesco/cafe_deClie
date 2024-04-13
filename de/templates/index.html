@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+    <meta charset="utf-8">
+    <title>Главная</title>
+  </head>
+  <body>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-center">
+              <ul class="uk-navbar-nav uk-visible@m">
+              <li class="uk-active"><a href="#">Главная</a></li>
+              <li>
+                  <a href="/store">Заказать</a>
+              </li>
+              <li><a href="/reservation">Зарезервировать</a></li>
+              <li><a href="/information">Информация</a></li>
+              <li><a href="/galary">Галерея</a></li>
+              <li><a href="/feedback">Обратная связь</a></li>
+              <li><a href="/vacance">Вакансии</a></li>
+              <li><a href="/mp">Мероприятия</a></li>
+          </ul>
+          <button class="uk-button uk-button-default uk-margin-small-right uk-hidden@m" type="button" uk-toggle="target: #offcanvas-nav-primary">de-Clie</button>
+      </div>
+      </nav>
+    </div>
+    <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+          <li class="uk-active"><a href="#">Главная</a></li>
+          <li>
+              <a href="/store">Заказать</a>
+          </li>
+          <li><a href="/reservation">Зарезервировать</a></li>
+          <li><a href="/information">Информация</a></li>
+          <li><a href="/galary">Галерея</a></li>
+          <li><a href="/feedback">Обратная связь</a></li>
+          <li><a href="/vacance">Вакансии</a></li>
+          <li><a href="/mp">Мероприятия</a></li>
+        </ul>
+
+    </div>
+  </div>
+  <div uk-slideshow="animation: scale;ratio: 7:3;autoplay: true;autoplay-interval: 3000;">
+
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+        <ul class="uk-slideshow-items">
+          {% for i in data %}
+            <li>
+                <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+                  <img src="{{ i.image.url }}" alt="" uk-cover>
+                </div>
+                <div class="uk-position-center uk-position-medium uk-text-center uk-light">
+                  <h3 class="uk-margin-remove" style="color:{{ i.color_text }};font-size:8vw">{{ i.heading }}</h3>
+                  <p class="uk-margin-remove" style="color:{{ i.color_text }};font-size:5vw"><span style="background-color:{{ i.color_background }}">{{ i.text }}</span></p>
+                </div>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+
+    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+</div>
+    <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Фирменные блюда</h3>
+            <p>«de Clie» предлагает вкусную и полезную еду. Мы готовим с учетом разнообразных гастрономических предпочтений и используем только свежие продукты. Изучите наше яркое меню и позвоните, чтобы забронировать столик.</p>
+    </div>
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="{% static 'main/w1.jfif' %}" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Сладкое</h3>
+            <p>Идеальный выбор</p>
+        </div>
+    </div>
+  </div>
+  <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+        <img src="{% static 'main/w2.jfif' %}" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Блюдо от шефа</h3>
+            <p>Всегда в наличии</p>
+        </div>
+    </div>
+</div>
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="{% static 'main/malina.jfif' %}" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Сладкий суп</h3>
+            <p>Всегда в наличии</p>
+        </div>
+    </div>
+</div>
+    <div class="uk-height-medium uk-background-cover uk-light uk-flex uk-margin" uk-parallax="bgy: -200" data-src="{% static 'main/cofee.jpg' %}" uk-img style="display:flex;flex-direction:column;">
+        <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"><span style = "background-color:#1F1A17;">Часы работы</span></h1><br>
+        <h2 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"><span style = "background-color:#1F1A17;">Еда в ресторане на вынос</span></h2><br>
+        <h2 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"><span style = "background-color:#1F1A17;">ПН-СБ: 11:00-23:00</span></h2><br>
+        <h2 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"><span style = "background-color:#1F1A17;">ВС: 11:00-19:00</span></h2>
+    </div>
+    <div class="maps" id="maps">
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afd4c4a41e4b874d6cfc04ceb35504a17a6ef3c90272fbc8135564eaae6431c8e&amp;width=100%&amp;height=30vh&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+  </body>
+  <footer class="uk-height-small uk-background-cover uk-light uk-flex uk-margin" style="background:#1F1A17;display:flex;justify-content:center;align-items:center;">
+    <a href="https://vk.com/public57989353" uk-tooltip="Переходи в нашу группу в вк"><div class="vk" style="width:6vh;height:6vh;background-image:url({% static 'main/vk.png' %});background-size:contain;"></div></a>
+  </footer>
+</html>

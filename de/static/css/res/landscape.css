@@ -1,0 +1,92 @@
+.cafe{
+    display: flex;
+    flex-direction: row;
+    aspect-ratio:2/1;
+    margin: auto;
+}
+.wall_for_entrace{
+    aspect-ratio:1/35.625;
+    background-color:#1F1A17;
+}
+.room{
+  aspect-ratio:1/1;
+}
+.room2{
+  aspect-ratio:1/0.65;
+}
+.t1{
+  aspect-ratio:1/1;
+}
+.t2{
+  aspect-ratio:2/1;
+}
+.t1:hover:before {
+  aspect-ratio:1/1;
+}
+.t2:hover:before {
+  aspect-ratio:2/1;
+}
+.stack_of_chair{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.ch1{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.ch2{
+  display: flex;
+  flex-direction: column;
+}
+.armchair1{
+  display: flex;
+  flex-direction: column;
+  transform: translate(5%,-11%);
+}
+.armchair2{
+  display: flex;
+  flex-direction: column;
+  transform: translate(5%,-11%);
+}
+.wall_for_room2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wall2{
+  aspect-ratio:1/18;
+  background-color: #1F1A17;
+}
+.end_wall{
+  aspect-ratio:1/32.4;
+  background-color: #1F1A17;
+}
+table{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+tbody{
+  margin: auto;
+}
+th{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+tr{
+  display: flex;
+  flex-direction: row;
+}
+.barplace{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.textbar{
+  transform: rotate(-45deg);
+}

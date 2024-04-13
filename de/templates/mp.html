@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мероприятия</title>
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+</head>
+<style>
+    @media (min-aspect-ratio:1/1){
+      .cards{
+        display:flex;
+        max-height:90vh;
+        flex-direction:row;
+        width:100%;
+        justify-content:space-evenly;
+      }
+    }
+    @media (max-aspect-ratio:1/1){
+      .cards{
+        flex-direction:column;
+      }
+    }
+</style>
+<body>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav uk-visible@m">
+                <li><a href="/">Главная</a></li>
+                <li>
+                    <a href="/store">Заказать</a>
+                </li>
+                <li><a href="/reservation">Зарезервировать</a></li>
+                <li><a href="/information">Информация</a></li>
+                <li><a href="/galary">Галерея</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/vacance">Вакансии</a></li>
+                <li class="uk-active"><a href="#">Мероприятия</a></li>
+            </ul>
+            <button class="uk-button uk-button-default uk-margin-small-right uk-hidden@m" type="button" uk-toggle="target: #offcanvas-nav-primary">de-Clie</button>
+        </div>
+        </nav>
+      </div>
+      <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+      <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+          <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <li><a href="/">Главная</a></li>
+            <li>
+                <a href="/store">Заказать</a>
+            </li>
+            <li><a href="/reservation">Зарезервировать</a></li>
+            <li><a href="/information">Информация</a></li>
+            <li><a href="/galary">Галерея</a></li>
+            <li><a href="/feedback">Обратная связь</a></li>
+            <li><a href="/vacance">Вакансии</a></li>
+            <li class="uk-active"><a href="#">Мероприятия</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:3vh;">
+          <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">Предстоящие события</h1>
+      </div>
+      <div style="display:flex;align-items:center;min-height:80vh;justify-content:center;">
+          <div class="cards">
+          {% for i in data %}
+            <div class="uk-card uk-card-default" style="max-height:80vh;margin-top:3vh;">
+                <div class="uk-card-media-top" style="aspect-ratio:1/1;max-height:50vh;">
+                  <img src="{{ i.image.url }}" style="aspect-ratio:1/1;object-fit:cover;" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">{{ i.title }}</h3>
+                    <p>{{ i.date }}</p>
+                    <div class="uk-inline">
+                      <a href="{{ i.title }}"><button class="uk-button uk-button-default uk-margin-small-top" type="button">Записаться</button></a>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+</body>
+<footer class="uk-height-small uk-background-cover uk-light uk-flex uk-margin" style="background:#1F1A17;display:flex;justify-content:center;align-items:center;">
+  <a href="https://vk.com/public57989353" uk-tooltip="Переходи в нашу группу в вк"><div class="vk" style="width:6vh;height:6vh;background-image:url({% static 'main/vk.png' %});background-size:contain;"></div></a>
+</footer>
+</html>

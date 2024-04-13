@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+  </head>
+  <style>
+      @media (min-aspect-ratio:14/5){
+        .cart{
+          width:17%;
+        }
+      }
+      @media (min-aspect-ratio: 120/96) and (max-aspect-ratio:14/5){
+        .cart{
+          width:23%;
+        }
+      }
+      @media (max-aspect-ratio:120/96) and (min-aspect-ratio:90/96){
+        .cart{
+          width:30%;
+        }
+      }
+      @media (max-aspect-ratio:90/96) and (min-aspect-ratio:50/96){
+        .cart{
+          width:45%;
+        }
+      }
+  </style>
+  <body>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav uk-visible@m">
+                <li><a href="/">Главная</a></li>
+                <li class="uk-active">
+                    <a href="#">Заказать</a>
+                </li>
+                <li><a href="/reservation">Зарезервировать</a></li>
+                <li><a href="/information">Информация</a></li>
+                <li><a href="/galary">Галерея</a></li>
+                <li><a href="/feedback">Обратная связь</a></li>
+                <li><a href="/vacance">Вакансии</a></li>
+                <li><a href="/mp">Мероприятия</a></li>
+            </ul>
+            <button class="uk-button uk-button-default uk-margin-small-right uk-hidden@m" type="button" uk-toggle="target: #offcanvas-nav-primary">de-Clie</button>
+        </div>
+        </nav>
+      </div>
+      <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+      <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+          <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <li><a href="/">Главная</a></li>
+            <li class="uk-active">
+                <a href="#">Заказать</a>
+            </li>
+            <li><a href="/reservation">Зарезервировать</a></li>
+            <li><a href="/information">Информация</a></li>
+            <li><a href="/galary">Галерея</a></li>
+            <li><a href="/feedback">Обратная связь</a></li>
+            <li><a href="/vacance">Вакансии</a></li>
+            <li><a href="/mp">Мероприятия</a></li>
+          </ul>
+      </div>
+    </div>
+    <div class="uk-flex uk-flex-center uk-flex-wrap" style="width:100%;display:flex;justify-content:space-evenly;">
+      {% for i in data %}
+        <div class="uk-card uk-card-default cart" style="margin-top:3vh;">
+            <div class="uk-card-media-top">
+              <img src="{{ i.image.url }}" width="1800" style="aspect-ratio:1/1;object-fit: cover;" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">{{ i.title }}</h3>
+                <p>Стоимость: {{ i.cost }} рублей</p>
+            </div>
+        </div>
+      {% endfor %}
+      </div>
+  </body>
+</html>

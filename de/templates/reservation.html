@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" media="(orientation:landscape)" href="{% static 'css/res/landscape.css' %}">
+    <link rel="stylesheet" media="(orientation:landscape) and (max-aspect-ratio:2/1)" href="{% static 'css/res/ratio_max21.css' %}">
+    <link rel="stylesheet" media="(orientation:landscape) and (min-aspect-ratio:2/1)" href="{% static 'css/res/ratio_min21.css' %}">
+    <link rel="stylesheet" media="(orientation:portrait)" href="{% static 'css/res/portrait.css' %}">
+    <link rel="stylesheet" media="(orientation:portrait) and (max-aspect-ratio:1/2)" href="{% static 'css/res/ratio_max12.css' %}">
+    <link rel="stylesheet" media="(orientation:portrait) and (min-aspect-ratio:1/2)" href="{% static 'css/res/ratio_min12.css' %}">
+    <link rel="stylesheet" href="{% static 'css/res/main.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+    <script src="{% static 'js/uikit.min.js' %}"></script>
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+    <title>Резервация столика</title>
+  </head>
+  <body>
+    <div class="">
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-center">
+              <ul class="uk-navbar-nav uk-visible@m">
+              <li><a href="/">Главная</a></li>
+              <li><a href="/store">Заказать</a></li>
+              <li class="uk-active"><a href="#">Зарезервировать</a></li>
+              <li><a href="/information">Информация</a></li>
+              <li><a href="/galary">Галерея</a></li>
+              <li><a href="/feedback">Обратная связь</a></li>
+              <li><a href="/vacance">Вакансии</a></li>
+              <li><a href="/mp">Мероприятия</a></li>
+          </ul>
+          <button class="uk-button uk-button-default uk-margin-small-right uk-hidden@m" type="button" uk-toggle="target: #offcanvas-nav-primary">de-Clie</button>
+      </div>
+      </nav>
+    </div>
+    <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+          <li><a href="/">Главная</a></li>
+          <li><a href="/store">Заказать</a></li>
+          <li class="uk-active"><a href="#">Зарезервировать</a></li>
+          <li><a href="/information">Информация</a></li>
+          <li><a href="/galary">Галерея</a></li>
+          <li><a href="/feedback">Обратная связь</a></li>
+          <li><a href="/vacance">Вакансии</a></li>
+          <li><a href="/mp">Мероприятия</a></li>
+        </ul>
+
+    </div>
+  </div>
+    <form class="body" action="/reservation/" method="post">
+    {% csrf_token %}
+    <div class="cafe">
+      <div>
+        <div class="wall_for_entrace">
+
+        </div>
+      </div>
+      <div class="room">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                  <div class="stack_of_chair">
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+                  <label class="custom-checkbox" for="{{ form.table1.id_for_label }}">
+                    {{ form.table1 }}
+                    <div class="table t2 checkbox"></div>
+                  </label>
+                  <div class="stack_of_chair">
+                    <div class="chair ch2">
+                        <div class="seat"></div>
+                        <div class="back"></div>
+                    </div>
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+              </th>
+              <th>
+                  <div class="chair ch1">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+
+                  <label class="custom-checkbox" for="{{ form.table2.id_for_label }}">
+                    {{ form.table2 }}
+                    <div class="table t1 checkbox"></div>
+                  </label>
+
+                  <div class="chair ch2">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+              </th>
+              <th>
+                  <div class="stack_of_chair">
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+
+                  <label class="custom-checkbox" for="{{ form.table3.id_for_label }}">
+                    {{ form.table3 }}
+                    <div class="table t2 checkbox"></div>
+                  </label>
+
+                  <div class="stack_of_chair">
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <div class="stack_of_chair">
+                  <div class="chair ch1">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                  <div class="chair ch1">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                </div>
+
+                <label class="custom-checkbox" for="{{ form.table4.id_for_label }}">
+                  {{ form.table4 }}
+                  <div class="table t2 checkbox"></div>
+                </label>
+
+                <div class="stack_of_chair">
+                  <div class="chair ch2">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                  <div class="chair ch2">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                </div>
+
+              </th>
+              <th>
+                <div class="stack_of_chair">
+                  <div class="chair ch1">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                  <div class="chair ch1">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                </div>
+
+                <label class="custom-checkbox" for="{{ form.table5.id_for_label }}">
+                  {{ form.table5 }}
+                  <div class="table t2 checkbox"></div>
+                </label>
+
+                <div class="stack_of_chair">
+                  <div class="chair ch2">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                  <div class="chair ch2">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                </div>
+              </th>
+              <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th class="barplace">
+                  <div class="textbar">Бар</div>
+                  <div class="bar">
+
+                  </div>
+                </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="wall_for_room2">
+
+        <div class="wall2"></div>
+        <div class="wall2"></div>
+
+      </div>
+      <div class="lol">
+        <div class="room room2">
+          <table>
+            <tbody>
+              <tr>
+                <th>
+                  <div class="armchairplace">
+                    <div class="armchair2">
+                      <div class="back_of_armchair backarmchaircolor1"></div>
+                      <div class="seat_of_armchair seatarmchaircolor1"></div>
+                    </div>
+                  </div>
+
+                  <label class="custom-checkbox" for="{{ form.table6.id_for_label }}">
+                    {{ form.table6 }}
+                    <div class="table t2 checkbox"></div>
+                  </label>
+
+                  <div class="stack_of_chair">
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+                </th>
+                <th>
+                  <div class="armchairplace">
+                    <div class="armchair1">
+                      <div class="back_of_armchair backarmchaircolor2"></div>
+                      <div class="seat_of_armchair seatarmchaircolor2"></div>
+                    </div>
+                  </div>
+
+                  <label class="custom-checkbox" for="{{ form.table7.id_for_label }}">
+                    {{ form.table7 }}
+                    <div class="table t1 checkbox"></div>
+                  </label>
+
+                  <div class="chair ch2">
+                    <div class="seat"></div>
+                    <div class="back"></div>
+                  </div>
+                </th>
+                <th>
+                  <div class="armchairplace">
+                      <div class="armchair2">
+                        <div class="back_of_armchair backarmchaircolor3"></div>
+                        <div class="seat_of_armchair seatarmchaircolor3"></div>
+                      </div>
+                  </div>
+
+                  <label class="custom-checkbox" for="{{ form.table8.id_for_label }}">
+                    {{ form.table8 }}
+                    <div class="table t2 checkbox"></div>
+                  </label>
+
+                  <div class="stack_of_chair">
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>
+                  <div class="stack_of_chair">
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+
+                  <label class="custom-checkbox" for="{{ form.table9.id_for_label }}">
+                    {{ form.table9 }}
+                    <div class="table t2 checkbox"></div>
+                  </label>
+
+                  <div class="stack_of_chair">
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                  </div>
+                </th>
+                <th>
+                    <div class="chair ch1">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+
+                    <label class="custom-checkbox" for="{{ form.table10.id_for_label }}">
+                      {{ form.table10 }}
+                      <div class="table t1 checkbox"></div>
+                    </label>
+
+                    <div class="chair ch2">
+                      <div class="seat"></div>
+                      <div class="back"></div>
+                    </div>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light form" style="display:none" id = "holder">
+            <h3 class="uk-card-title">Резервация столика</h3>
+            <p>Заполните форму чтобы зарезервировать столик</p>
+            <p id = 'costtext'></p>
+            <div class="forminform">
+              <p class="uk-form-label">Представьтесь</p>
+              {{ form.name }}
+              {{ form.sername }}
+              <div class="uk-margin">
+                   <p class="uk-form-label">Назначьте время</p>
+                   <div class="uk-form-controls">
+                     {{ form.date }}
+                   </div>
+               </div>
+               <div class="uk-margin">
+                  <p class="uk-form-label">Оставьте контакты</p>
+                  <div class="uk-form-controls">
+                    {{ form.number }}
+                  </div>
+              </div>
+              <button type="submit" name="" class="uk-button uk-button-default">Зарезервировать</button>
+            </div>
+    </div>
+    </div>
+    <label for="adform" class="adform-btn" uk-tooltip="Нажми для бронирования столика">
+      <div class="burger noactive" id = "burger">
+        <input type="checkbox" name="" value="" id='adform' style="display:none">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </label>
+  </form>
+  <script>
+      var tablescheck = document.getElementsByClassName('hidden_checkbox');
+      var checked = false;
+      var costtext = document.getElementById('costtext');
+      const burger = document.getElementById('adform');
+      const holder = document.getElementById('holder');
+        burger.addEventListener("click", function() {
+          if(burger.checked){
+              for(let table of tablescheck){
+                if(table.checked){
+                  checked = true;
+                  break;
+                }
+              }
+              if(checked){
+                holder.setAttribute("style","display:block;position:fixed;");
+                let tabletype1 = document.getElementsByClassName('tc1');
+                let tabletype2 = document.getElementsByClassName('tc2');
+                let tc1 = 0,tc2 = 0;
+                for(let tc of tabletype1){
+                  if(tc.checked){
+                    tc1 += 1;
+                  }
+                }
+                for(let tc of tabletype2){
+                  if(tc.checked){
+                    tc2 += 1;
+                  }
+                }
+                cost = tc1 * 2500 + tc2 * 5000;
+                costtext.innerHTML = "Общая стоимость брони столиков: " + cost + " рублей";
+              }else{
+                UIkit.notification("Выберите хотя бы одно место!", {status: 'danger'})
+                burger.checked = false;
+                checked = false;
+              }
+          }else {
+              holder.setAttribute("style","display:none;");
+          }
+        });
+  </script>
+  </body>
+</html>

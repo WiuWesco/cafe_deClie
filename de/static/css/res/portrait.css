@@ -1,0 +1,79 @@
+.cafe{
+    display: flex;
+    flex-direction: column-reverse;
+    aspect-ratio:1/2;
+    margin: auto;
+}
+.barplace{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.bar {
+  aspect-ratio:2/1;
+  background: #1F1A17;
+  position: relative;
+}
+.textbar{
+  transform: rotate(45deg);
+}
+.t1{
+  aspect-ratio:1/1;
+}
+.t2{
+  aspect-ratio:1/2;
+}
+.t1:hover:before {
+  aspect-ratio:1/1;
+}
+.t2:hover:before {
+  aspect-ratio:1/2;
+}
+.stack_of_chair{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.ch1{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.ch2{
+  display: flex;
+  flex-direction: row;
+}
+.armchair1{
+  display: flex;
+  flex-direction: row;
+  transform: translate(-23%,-5%);
+}
+.armchair2{
+  display: flex;
+  flex-direction: row;
+  transform: translate(-23%,0);
+}
+th{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+tr{
+  display: flex;
+  flex-direction: column-reverse;
+}
+tbody{
+  display: flex;
+  flex-direction: row;
+}
+.wall2{
+  background-color: #1F1A17;
+}
+.wall_for_room2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.wall_for_entrace{
+  background-color: #1F1A17;
+}
