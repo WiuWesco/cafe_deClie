@@ -1,0 +1,137 @@
+body{
+  background-image: url("perg.jpg");
+  background-size:cover;
+  margin: 0px;
+  height: 100vh;
+  display: flex;
+}
+.body{
+  height: 90vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-size: cover;
+  margin: auto;
+}
+.room{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table{
+  background-image: url("tree.jpg");
+  background-size: auto 100%;
+}
+.t1:hover:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 140, 0, 0.3);
+  transform: translate(-50%,0);
+}
+.t2:hover:before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 140, 0, 0.3);
+  transform: translate(-50%,0);
+}
+.seatarmchaircolor1{
+  background-color: rgb(100,0,0);
+}
+.backarmchaircolor1{
+  background-color: rgb(140,0,0);
+}
+.seatarmchaircolor2{
+  background-color: rgb(255, 140, 0);
+}
+.backarmchaircolor2{
+  background-color: rgb(255, 165, 0);
+}
+.seatarmchaircolor3{
+  background-color: rgb(0,100,0);
+}
+.backarmchaircolor3{
+  background-color: rgb(0,140,0);
+}
+.bar:before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 0;
+}
+.bar {
+  aspect-ratio:2/1;
+  background: #1F1A17;
+  position: relative;
+}
+.back{
+  background-color: rgb(0,140,0);
+}
+.seat{
+  background-color: rgb(0,100,0)
+}
+.textbar{
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  position: absolute;
+}
+.hidden-checkbox{
+  display: none;
+}
+.form{
+  position: fixed;
+  display: none;
+}
+.hidden_checkbox{
+  display: none;
+}
+.custom-checkbox input:checked ~ .table{
+  background: green;
+}
+.adform-btn{
+  background-color: #1F1A17;
+  font-size:1.2vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 5vh;
+  width: 10vh;
+  border-radius: 100% 100% 0 0;
+  position: fixed;
+  right: calc(50vw - 5vh);
+  left:calc(50vw - 5vh);
+  top:95%;
+}
+.burger{
+    height: 4vh;
+    width: 4vh;
+    transition:0.2s;
+}
+.bar1, .bar2, .bar3 {
+    width: 4vh;
+    height: 0.75vh;
+    background-color: #333;
+    transition: 0.2s;
+    margin-top: 0.45vh;
+}
+.adform-btn input[type="checkbox"]:checked ~ .bar2 {
+  display: none;
+}
+.adform-btn input[type="checkbox"]:checked ~ .bar1 {
+  transform: translate(0px,1.2vh) rotate(45deg);
+}
+
+.adform-btn input[type="checkbox"]:checked ~ .bar3 {
+  transform: translate(0px,  0.1vh) rotate(135deg);
+}
+
+.adform-btn input[type="checkbox"]:checked ~ .form{
+  display: block;
+}
+.form{
+  position: fixed;
+  z-index: 2;
+}

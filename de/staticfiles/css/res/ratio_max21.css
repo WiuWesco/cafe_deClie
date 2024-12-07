@@ -1,0 +1,84 @@
+.bar{
+   width: 8vw;
+}
+.bar:before {
+  top: -4vw;
+  border-bottom: 4vw solid #1F1A17;
+  border-left: 4vw solid transparent;
+  border-right: 4vw solid #1F1A17;
+}
+.textbar{
+  padding: 0px 0 0 1vw;
+  margin-bottom: 2vw;
+  margin-right: 0.5vw;
+  font: 3vw/1 'Open Sans Condensed', sans-serif;
+}
+.table{
+  height:4.8vw;
+}
+.t1:hover:before {
+  height:4.8vw;
+}
+.t2:hover:before {
+  height:4.8vw;
+}
+.stack_of_chair{
+  width: 11.76vw;
+  height: 2.73vw;
+}
+.armchairplace{
+  width: 14vw;
+  height: 3.52vw
+}
+.seat_of_armchair{
+  width: 12vw;
+  height: 2.88vw;
+}
+.back_of_armchair{
+  width: 12vw;
+  height: 0.96vw;
+}
+.chair{
+  width: 2.64vw;
+  height: 2.64vw;
+}
+.back{
+  width: 2.64vw;
+  height: 0.88vw;
+}
+.seat{
+  width: 2.64vw;
+  height: 1.76vw;
+}
+.cafe{
+  width: 76vw;
+}
+.room{
+  border: 0.8vw solid #1F1A17;
+  width: 37.2vw;
+  border-left: none;
+  border-right: none;
+}
+.room2{
+    border-right: 0.8vw solid #1F1A17;
+}
+th{
+  width: 11.76vw;
+  height: 11.76vw;
+}
+tr{
+  width: 35.2vw;
+  height: 12vw;
+}
+.end_wall{
+  width: 0.8vw;
+}
+.wall2{
+  width: 0.8vw;
+}
+.wall_for_room2{
+  width: 0.8vw;
+}
+.wall_for_entrace{
+    width: 0.8vw;
+}
