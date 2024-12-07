@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-%+_r&1*vfoor&fp4i8$pdmaha6gacxs=8gjk9qabeg4p9z2jj+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','wiu.pythonanywhere.com','declie.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','wiu.pythonanywhere.com','declie.pythonanywhere.com', 'declie.netlify.app']
 
 
 # Application definition
